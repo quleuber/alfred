@@ -1,11 +1,39 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+  // If you want to use Prisma Migrate, you will need to manually create a shadow database
+  // https://neon.tech/docs/guides/prisma-migrate#configure-a-shadow-database-for-prisma-migrate
+  // make sure to append ?connect_timeout=10 to the connection string
+  // shadowDatabaseUrl = env(“SHADOW_DATABASE_URL”)
+}
 
 generator client {
   provider = "prisma-client-js"
 }
 
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+model Tweet {
+  id               BigInt      @id
+  local_created_at DateTime    @default(now())
+  local_updated_at DateTime    @updatedAt
+  author           TwitterUser @relation(fields: [author_id], references: [id])
+  author_id        BigInt
+  text             String
+}
+
+model TwitterUser {
+  id               BigInt   @id
+  local_created_at DateTime @default(now())
+  local_updated_at DateTime @updatedAt
+  username         String
+  name             String
+  description      String
+  entities         Json
+  protected        Boolean
+  verified         Boolean
+  location         String?
+  pinned_tweet_id  BigInt?
+  followers_count  Int
+  friends_count    Int
+  Tweet            Tweet[]
 }

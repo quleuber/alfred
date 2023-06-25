@@ -4,5 +4,8 @@
   "packageManager": "yarn@3.6.0",
   "devDependencies": {
     "prisma": "^4.16.1"
+  },
+  "dependencies": {
+    "@prisma/client": "4.13.0"
   }
 }
