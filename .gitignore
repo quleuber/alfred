@@ -3,5 +3,18 @@
 
 .env
 
-/.vscode/
-/venv/
+.envrc
+
+/.vscode
+
+/.direnv
+/venv
+node_modules
+
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
