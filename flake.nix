@@ -12,7 +12,7 @@
   {
     devShell.${system} = pkgs.mkShell {
       buildInputs = with pkgs; [
-        openssl
+        # openssl
         # prisma-engines
         nodePackages.prisma
       ];
