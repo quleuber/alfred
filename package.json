@@ -2,6 +2,9 @@
   "private": true,
   "version": "0.0.0",
   "packageManager": "yarn@3.6.0",
+  "workspaces": [
+    "alfred-ts/*"
+  ],
   "devDependencies": {
     "prisma": "^4.16.1"
   },
