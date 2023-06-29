@@ -4,8 +4,9 @@
 .env
 
 /.vscode
-
 /.direnv
+
+/target
 /venv
 node_modules
 
