@@ -10,6 +10,7 @@
     "typescript": "^5.1.3"
   },
   "dependencies": {
+    "@prisma/client": "^4.16.1",
     "comedy": "^2.1.7"
   }
 }
