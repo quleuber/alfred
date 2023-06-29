@@ -1,3 +1,5 @@
+mod actors;
+
 use bastion::prelude::*;
 use serde::Deserialize;
 use tide::Request;
