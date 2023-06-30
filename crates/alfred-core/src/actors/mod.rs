@@ -1,1 +1,1 @@
-mod notifications;
+pub mod notifications;

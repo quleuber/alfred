@@ -87,7 +87,7 @@ dependencies = [
  "async-std",
  "bastion",
  "chrono",
- "fort",
+ "femme",
  "serde",
  "serde_json",
  "tide",
@@ -788,17 +788,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a62bc1cf6f830c2ec14a513a9fb124d0a213a629668a4186f329db21fe045652"
 dependencies = [
  "percent-encoding",
-]
-
-[[package]]
-name = "fort"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "53271ed4001d20f501147fe3488f3ce7f9ee43f564ea1a7fab808dcfe2ce3e2d"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn 1.0.109",
 ]
 
 [[package]]
