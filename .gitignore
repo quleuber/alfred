@@ -6,6 +6,8 @@
 /.vscode
 /.direnv
 
+.tmp-arion-docker-compose*.yaml
+
 /target
 /venv
 node_modules
