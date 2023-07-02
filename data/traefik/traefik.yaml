@@ -1,0 +1,31 @@
+api:
+  insecure: true
+
+entryPoints:
+  web:
+    address: ":80"
+    # http:
+    #   redirections:
+    #     entryPoint:
+    #       to: web-secure
+    #       scheme: https
+    #       permanent: true
+  web-secure:
+    address: ":443"
+
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    exposedByDefault: false
+  file:
+    filename: "/etc/traefik/dynamic_conf.yaml"
+    watch: true
+
+certificatesResolvers:
+  le-resolver:
+    acme:
+      email: "me@steinerkelvin.dev"
+      storage: "/etc/traefik/acme.json"
+      caServer: "https://acme-staging-v02.api.letsencrypt.org/directory"
+      httpChallenge:
+        entryPoint: web

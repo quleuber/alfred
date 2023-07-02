@@ -1,0 +1,7 @@
+tunnel: ac4aedfb-9b30-432f-b125-c51f5381a60c
+credentials-file: /home/kelvin/.cloudflared/ac4aedfb-9b30-432f-b125-c51f5381a60c.json
+
+ingress:
+  - hostname: alfred.steinerkelvin.dev
+    service: http://localhost:49381
+  - service: http_status:404

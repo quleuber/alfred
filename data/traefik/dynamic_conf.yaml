@@ -1,0 +1,15 @@
+http:
+  routers:
+    alfred-router:
+      rule: "Host(`alfred.steinerkelvin.dev`)"
+      service: "alfred-app"
+      entryPoints:
+        - web
+        - web-secure
+      tls:
+        certResolver: le-resolver 
+  services:
+    alfred-app:
+      loadBalancer:
+        servers:
+          - url: "http://localhost:49281"
