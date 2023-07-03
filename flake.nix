@@ -17,10 +17,12 @@
       in
       {
         devShell = pkgs.mkShell {
-          buildInputs = with pkgs; [
-            arion
-            # prisma-engines
-            # nodePackages.prisma
+          buildInputs = [
+            pkgs.arion
+            pkgs.terraform
+            pkgs.terraform-providers.oci
+            # pkgs.prisma-engines
+            # pkgs.nodePackages.prisma
           ];
           # shellHook = let prisma-engines = pkgs.prisma-engines; in ''
           #   export PRISMA_MIGRATION_ENGINE_BINARY="${prisma-engines}/bin/migration-engine"

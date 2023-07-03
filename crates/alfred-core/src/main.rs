@@ -41,7 +41,7 @@ fn tide_task() -> impl Fn(BastionContext) -> BastionFuture<Result<(), ()>> {
             app.at("/").get(|_| async move { Ok("Hello, world!") });
             app.at("/collect/notification")
                 .post(handle_notification);
-            let res = app.listen("0.0.0.0:8080").await;
+            let res = app.listen("0.0.0.0:49281").await;
             match res {
                 Err(e) => panic!("Error: {}", e),
                 Ok(_) => Ok(()),
