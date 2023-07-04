@@ -24,7 +24,4 @@ module "infra" {
 
   net_id              = var.net_id
   ssh_authorized_keys = var.ssh_authorized_keys
-
-  num_master_nodes = var.num_master_nodes
-  num_worker_nodes = var.num_worker_nodes
 }
